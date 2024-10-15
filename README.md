@@ -104,11 +104,12 @@ CALCULATE(
       Transaction_Data[ACTUAL_PRICE]  * Transaction_Data[QTY_SHIPPED]
         )
 ```
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Data Modeling 
 A star schema was adopted for data model purposes. The SRC table is a brigade table between the transaction and security table with a unique sales representative code, as there are duplicates in the security table. A security table is used for role-level security requirements. 
 
 ![image](https://github.com/user-attachments/assets/621b1e6a-791d-466d-8a71-1751a2369ad2)
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Row Level Security 
 RLS – Requirements:  
 A dynamic role level security must be confirmed based on the security table and email address column information. 
@@ -117,6 +118,7 @@ For dynamic RLS, the user principal name Dax function dynamically tracks the ema
 ![image](https://github.com/user-attachments/assets/6c83ab8b-16bf-41d5-8c9f-6df532e1cdda)
 
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Observation
 - Yes, there are non-compliant invoices. The total number of invoices was 2328. Among them, 2068 (88.83%) were compliant, whereas 260 (11.17%) were non-compliant. 
 - Out of the $20.10 million in total revenue collected, about $442.552.08 (for 260 non-compliant invoices) was observed in revenue leakage or deficit. 
