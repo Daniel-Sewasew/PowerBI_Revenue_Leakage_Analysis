@@ -157,3 +157,8 @@ With Whitney showing the highest leakage among account coordinators, it may be n
 8. Prioritize High-Risk Customers:
 The top five customers with the highest leakage (Oirko, Epicin, Pharmacal, Inc., Eouse-Kansas, and McCormick) should be closely monitored. Strengthen contract compliance and negotiate better terms to prevent future losses from these customers.
 
+### Tools Used
+- Excel
+- PowerBI
+- Power Query 
+
