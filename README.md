@@ -103,4 +103,29 @@ A star schema was adopted for data model purposes. The SRC table is a brigade ta
 - Among the sales representatives, Tim experienced the highest sales leakage, -438,545, followed by Karen with -29,874, Sarah with -13,641, and Nick with the slightest leakage, -2,138.
 - The result indicates that Whitney had the most significant leakage at -458,605, followed by Jon with -6,460. In contrast, Roxanne had no leakage, and Makenzie showed a positive leakage of 12,513 from the account coordinators.
 - The top five customers contributing to revenue leakage are Oirko with -434,730, Epicin with -28,157, Pharmacal, Inc. with -24,590, Eouse-Kansas with -12,161, and BcCormick with -9,139.
+### Recommendation 
+Here are recommendations based on the observations:
+1. Address Non-Compliance Issues:
+Since 11.17% of invoices are non-compliant, establish stricter compliance protocols and introduce automated validation processes to reduce non-compliance and associated revenue leakage.
+
+2. Investigate Revenue Leakage:
+The significant revenue leakage of $-442,552.08 (particularly in December 2021) warrants a deep investigation into the causes. Identify and rectify process inefficiencies or errors that led to such a sharp drop.
+
+3. Focus on December 2021:
+Given that December 2021 saw the highest revenue leakage, conduct a detailed analysis of operations, invoicing errors, and external factors that may have caused the sharp drop in revenue and develop preventive measures for the future.
+
+4. Target Industry-Specific Solutions:
+Service companies, food, and beverage industries show the highest leakage. Implement customized compliance measures and review contractual terms in these sectors to reduce leakage and tighten revenue management.
+
+5. Optimize Item Categories:
+The "Others," "Containers," and "Caps and Closures" item categories have the highest revenue leakage. Review the pricing strategies, procurement processes, and inventory management for these items to minimize the financial loss.
+
+6. Evaluate Sales Team Performance:
+Focus on improving the performance of sales representatives, particularly Tim, who experienced the highest leakage. Training, better sales tracking, and closer monitoring of high-risk transactions can help mitigate future losses.
+
+7. Strengthen Account Coordination:
+With Whitney showing the highest leakage among account coordinators, it may be necessary to reassess their handling of accounts and introduce training or process improvements to reduce errors.
+
+8. Prioritize High-Risk Customers:
+The top five customers with the highest leakage (Oirko, Epicin, Pharmacal, Inc., Eouse-Kansas, and BcCormick) should be closely monitored. Strengthen contract compliance and negotiate better terms to prevent future losses from these customers.
 
