@@ -1,4 +1,4 @@
-## Revenue Leakage Analysis
+## `Revenue Leakage Analysis`
 ### Table of Content 
 - [Introduction](#introduction )
 - [Business Question](#business-question)
@@ -10,9 +10,12 @@
 - [Observation](#observation)
 - [Recommendation](#recommendation)
 
-### Introduction  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### Introduction 
 In the financial domain, revenue leakage is the unnoticed loss of potential earnings due to process inefficiencies, errors, or mismanagement. It drains profitability when companies provide services or products but fail to capture or record the revenue, often occurring in billing, pricing, contract management, and payments.
 This Power BI analysis aims to identify non-compliant activities, track revenue leakage and trends, assess total revenue, highlight key industries and offenders, pinpoint specific products or materials prone to non-compliance, and provide valuable insights to decision-makers.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Business Question 
 - Do we have a lot of non-compliant activity?
 - What is the Leakage amount/status for non-compliant invoices?
@@ -21,18 +24,21 @@ This Power BI analysis aims to identify non-compliant activities, track revenue 
 - What are the top 5 revenue leakage industries? 
 - Who are the biggest offenders (Sales Representative, Account Coordinator, Customers)?
 - Is non-compliance more common among specific item groups, materials, etc.?
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Requirement
 1. The final report should contain a dashboard and, at most, three additional pages of analysis. 
 2. The developer should decide what visuals, slicers, date filters, etc., best fulfill the requirements and answer the Business User Questions.
 3. Only analyze activity for Item Type = INVENTORY.
-4. Implement Row Level Security based on OPRID and Sales Rep Code (based on the Security tab). 
+4. Implement Row Level Security based on OPRID and Sales Rep Code (based on the Security tab).
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Data Preparation 
 Using power query, the following tasks are performed. 
 - Calculate a calculated column to identify invoice types as compliant vs non-compliant. 
 - Compute general leakage measures to know the overall leakage status and for subsequent calculations of leakage percentages. 
 - Calculate the percentage of the ratio to know the amount of invoice leakage. 
 - Create the date table for further calculations related to the fact table with the invoice date. 
-- Create a bridge table with a unique link between the security and transaction tables. 
+- Create a bridge table with a unique link between the security and transaction tables.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### KPI and Definition 
 Using the Dax formula, the following tasks were accomplished. 
 - Compliant = invoices where LIST_PRICE <= ACTUAL_PRICE.
@@ -122,6 +128,7 @@ For dynamic RLS, the user principal name Dax function dynamically tracks the ema
 - Among the sales representatives, Tim experienced the highest sales leakage, -438,545, followed by Karen with -29,874, Sarah with -13,641, and Nick with the slightest leakage, -2,138.
 - The result indicates that Whitney had the most significant leakage at -458,605, followed by Jon with -6,460. In contrast, Roxanne had no leakage, and Makenzie showed a positive leakage of 12,513 from the account coordinators.
 - The top five customers contributing to revenue leakage are Oirko with -434,730, Epicin with -28,157, Pharmacal, Inc. with -24,590, Eouse-Kansas with -12,161, and BcCormick with -9,139.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Recommendation 
 Here are recommendations based on the observations:
 1. Address Non-Compliance Issues:
