@@ -60,3 +60,47 @@ IF (
  ``` DIVIDE(
     SUM(Transaction_Data[Leakage GM]),SUM(Transaction_Data[INVOICE_GM]))
 ```
+- Total Inventory Invoices: count of total products sold where the item type is inventory.
+```
+CALCULATE(
+    COUNT(Transaction_Data[PRODUCT_ID]),
+   'Item Master'[Item Type] = "INVENTORY"
+```
+- Compliant Invoices: the count of total products sold, where type is inventory, and compliant type is compliant.
+```
+CALCULATE(
+    COUNT(Transaction_Data[PRODUCT_ID]),
+    'Item Master'[Item Type] = "INVENTORY",
+    Transaction_Data[CompliantInfo] = "Compliant"
+```
+- Non-compliant invoices are the count of total products sold, where the type is inventory, and the compliant type is non-compliant.
+```
+CALCULATE(
+    COUNT(Transaction_Data[PRODUCT_ID]),
+    'Item Master'[Item Type] = "INVENTORY",
+    Transaction_Data[CompliantInfo] = "Non Compliant"
+```
+- Total Revenue: the sum of actual price times shipped quantity.
+```
+  SUMX(
+      Transaction_Data,
+      Transaction_Data[ACTUAL_PRICE]  * Transaction_Data[QTY_SHIPPED]
+        )
+```
+### Data Modeling 
+A star schema was adopted for data model purposes. The SRC table is a brigade table between the transaction and security table with a unique sales representative code, as there are duplicates in the security table. A security table is used for role-level security requirements. 
+
+![image](https://github.com/user-attachments/assets/621b1e6a-791d-466d-8a71-1751a2369ad2)
+
+### Observations
+- Yes, there are non-compliant invoices. The total number of invoices was 2328. Among them, 2068 (88.83%) were compliant, whereas 260 (11.17%) were non-compliant. 
+- Out of $20.10 million in total revenue collected, about $-442.552.08 (for 260 non-compliant invoices) was observed in revenue leakage or deficit. 
+- Dec 2021 was the highest revenue leakage month with $-416,838.50, -50.84% of the deficit for 204 invoice orders. 
+- The chart shows that revenue leakage remained relatively stable, nearly zero, from July 2021 to November 2021. A sharp drop in December 2021 indicates a significant revenue leakage, reaching approximately -400K.
+- Services companies ($-430,287), food ($-51,273), and beverage ($-19,846) were the top three market industries that showed revenue leakage, respectively. 
+- Others ($402,791), Containers ($-30,859), and Caps and Closers ($-18,903) are the top three item types with the highest revenue leakage items category. 
+- The chart shows that the most significant revenue leakage comes from "Others" at -402,791, followed by "Containers" with -30,859, "Caps &..." with -18,903, while "Packaging" has negligible or no leakage.
+- Among the sales representatives, Tim experienced the highest sales leakage, -438,545, followed by Karen with -29,874, Sarah with -13,641, and Nick with the slightest leakage, -2,138.
+- The result indicates that Whitney had the most significant leakage at -458,605, followed by Jon with -6,460. In contrast, Roxanne had no leakage, and Makenzie showed a positive leakage of 12,513 from the account coordinators.
+- The top five customers contributing to revenue leakage are Oirko with -434,730, Epicin with -28,157, Pharmacal, Inc. with -24,590, Eouse-Kansas with -12,161, and BcCormick with -9,139.
+
