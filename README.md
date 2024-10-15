@@ -74,7 +74,8 @@ IF (
 )
 ```
 - Leakage % = Leakage GM / INVOICE_GM.
- ``` DIVIDE(
+ ```
+DIVIDE(
     SUM(Transaction_Data[Leakage GM]),SUM(Transaction_Data[INVOICE_GM]))
 ```
 - Total Inventory Invoices: count total products sold where the item type is inventory.
