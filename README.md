@@ -1,8 +1,19 @@
 ## Revenue Leakage Analysis
+### Table of Content 
+- [Introduction](#introduction )
+- [Business User Questions to be answered by Report](#business-user-questions-to-be-answered-by-report)
+- [ Requirements](#requirements)
+- [Data Preparation](#data-preparation)
+- [KPIs and Definitions](#kpis-and-definitions)
+- [Data Modeling](#data-modeling)
+- [Observations](#observations)
+- [Recommendation](#recommendation)
+  
 The Power BI analysis aims to identify non-compliant activities, track revenue leakage and trends, assess total revenue, highlight key industries and offenders, pinpoint specific products or materials prone to non-compliance, and provide valuable insights to decision-makers.
+
 ### Introduction  
 In the financial domain, revenue leakage is the unnoticed loss of potential earnings due to process inefficiencies, errors, or mismanagement. It drains profitability when companies provide services or products but fail to capture or record the revenue, often occurring in billing, pricing, contract management, and payments.
-### Business User Questions to be answered by Report:
+### Business User Questions to be answered by Report
 - Do we have a lot of non-compliant activity?
 - What is the Leakage amount/status for non-compliant invoices?
 - Do the leakage trends change over time?
