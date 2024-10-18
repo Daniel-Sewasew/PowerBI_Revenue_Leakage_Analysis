@@ -119,7 +119,7 @@ For dynamic RLS, the user principal name Dax function dynamically tracks the ema
 ![image](https://github.com/user-attachments/assets/6c83ab8b-16bf-41d5-8c9f-6df532e1cdda)
 
 
-
+### Dashboard Graphics
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Observation
 - Yes, there are non-compliant invoices. The total number of invoices was 2328. Among them, 2068 (88.83%) were compliant, whereas 260 (11.17%) were non-compliant. 
