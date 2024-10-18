@@ -6,6 +6,7 @@
 - [Data Preparation](#data-preparation)
 - [KPI and Definition](#kpi-and-definition)
 - [Data Modeling](#data-modeling)
+- [ Dashboard Graphics](#dashboard-graphics)
 - [Row Level Security](#row-level-security )
 - [Observation](#observation)
 - [Recommendation](#recommendation)
@@ -111,6 +112,17 @@ A star schema was adopted for data model purposes. The SRC table is a brigade ta
 
 ![image](https://github.com/user-attachments/assets/621b1e6a-791d-466d-8a71-1751a2369ad2)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Dashboard Graphics
+##### Main Page
+![Main_Page](https://github.com/user-attachments/assets/be495f26-699b-4c69-acce-244ad437b6bf)
+
+##### Main Page with Filter Pane
+![Main_Page_FilterPane](https://github.com/user-attachments/assets/2ae724f3-5b42-4556-ac2a-d2be8fe1d66b)
+
+##### Detail View 
+![LinkPic2](https://github.com/user-attachments/assets/f44b98e7-169f-4bdc-936e-cc8288b2b7c8)
+
 ### Row Level Security 
 RLS – Requirements:  
 A dynamic role level security must be confirmed based on the security table and email address column information. 
@@ -118,8 +130,6 @@ For dynamic RLS, the user principal name Dax function dynamically tracks the ema
 
 ![image](https://github.com/user-attachments/assets/6c83ab8b-16bf-41d5-8c9f-6df532e1cdda)
 
-
-### Dashboard Graphics
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Observation
 - Yes, there are non-compliant invoices. The total number of invoices was 2328. Among them, 2068 (88.83%) were compliant, whereas 260 (11.17%) were non-compliant. 
