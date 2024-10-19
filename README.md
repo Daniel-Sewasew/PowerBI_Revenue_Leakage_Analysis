@@ -46,7 +46,7 @@ Using the Dax formula, the following tasks were accomplished.
 - Non-Compliant = invoices where LIST_PRICE > ACTUAL_PRICE.
 - Note: These two KPIs need to be created using the calculated column as they are also input for further calculations.
 - Compliant Information =
-```
+```sql
 IF (
     Transaction_Data[LIST_PRICE] <= Transaction_Data[ACTUAL_PRICE],
     "Compliant",
@@ -57,11 +57,11 @@ IF (
 )
 ```
 - Leakage General Measure = (LIST_PRICE - ACTUAL_PRICE) * QTY_SHIPPED
-  ```
+  ```sql
      ( Transaction_Data[LIST_PRICE] - Transaction_Data[ACTUAL_PRICE] ) * Transaction_Data[QTY_SHIPPED]
   ```
 - Leakage Actual: Calculation conditions: Leakage should not include Compliant transactions, where QTY_SHIPPED <= 0, where INVOICE_GM <= 0, or where the Leakage GM being calculated is > INVOICE_GM of that line. In these instances, Leakage GM should = $0.
-```
+```sql
 IF (
     Transaction_Data[CompliantInfo] <> "Compliant", --Leakage should not include transactions that are Compliant,
     IF (
@@ -75,32 +75,32 @@ IF (
 )
 ```
 - Leakage % = Leakage GM / INVOICE_GM.
- ```
+ ```sql
 DIVIDE(
     SUM(Transaction_Data[Leakage GM]),SUM(Transaction_Data[INVOICE_GM]))
 ```
 - Total Inventory Invoices: count total products sold where the item type is inventory.
-```
+```sql
 CALCULATE(
     COUNT(Transaction_Data[PRODUCT_ID]),
    'Item Master'[Item Type] = "INVENTORY"
 ```
 - Compliant Invoices: the count of total products sold, where type is inventory, and compliant type is compliant.
-```
+```sql
 CALCULATE(
     COUNT(Transaction_Data[PRODUCT_ID]),
     'Item Master'[Item Type] = "INVENTORY",
     Transaction_Data[CompliantInfo] = "Compliant"
 ```
 - Non-compliant invoices are the count of total products sold, where the type is inventory, and the compliant type is non-compliant.
-```
+```sql
 CALCULATE(
     COUNT(Transaction_Data[PRODUCT_ID]),
     'Item Master'[Item Type] = "INVENTORY",
     Transaction_Data[CompliantInfo] = "Non Compliant"
 ```
 - Total Revenue: the sum of actual price times shipped quantity.
-```
+```sql
   SUMX(
       Transaction_Data,
       Transaction_Data[ACTUAL_PRICE]  * Transaction_Data[QTY_SHIPPED]
